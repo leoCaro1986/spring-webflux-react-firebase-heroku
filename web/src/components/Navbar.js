@@ -12,6 +12,8 @@ export const PublicNavbar = () => (
   </nav>
 )
 
+
+
 export const PrivateNavbar = () => (
   <nav>
     <section>

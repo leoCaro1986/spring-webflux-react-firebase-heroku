@@ -22,6 +22,11 @@ public class MapperUtils {
         };
     }
 
+
+
+
+
+
     public Function<QuestionDTO, Question> mapperToQuestion(String id) {
         return updateQuestion -> {
             var question = new Question();
@@ -48,6 +53,7 @@ public class MapperUtils {
     public Function<Answer, AnswerDTO> mapEntityToAnswer() {
         return entity -> new AnswerDTO(
                 entity.getId(),
+                entity.getQuestionId(),
                 entity.getUserId(),
                 entity.getAnswer()
         );
