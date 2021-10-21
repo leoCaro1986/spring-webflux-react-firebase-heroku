@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchQuestion } from '../actions/questionActions'
+import { fetchQuestion, deleteAnswer } from '../actions/questionActions'
 
 import { Question } from '../components/Question'
 import { Answer } from '../components/Answer'
 import { Link } from 'react-router-dom'
+import swal from 'sweetalert';
 
 const SingleQuestionPage = ({
   match,
@@ -13,12 +14,32 @@ const SingleQuestionPage = ({
   question,
   hasErrors,
   loading,
+  redirect,
   userId
 }) => {
   const { id } = match.params
   useEffect(() => {
     dispatch(fetchQuestion(id))
-  }, [dispatch, id])
+  }, [dispatch, redirect, id])
+
+  const onDelete = (id) => {
+        swal({
+            title:"¿Verdaderamente desea eliminar?",
+            text:"Si presiona ok este se eliminará.",
+            icon:"warning",
+            buttons:["Cancell", "Confirm"]
+        }).then(answerToDelete => {
+            if(answerToDelete ){
+                dispatch(deleteAnswer(id))
+                swal({
+                    text:"La pregunta ha sido eliminada!",
+                        icon:"success"
+                });
+            }
+        });    
+    }
+
+
 
   const renderQuestion = () => {
     if (loading.question) return <p>Loading question...</p>
@@ -29,7 +50,7 @@ const SingleQuestionPage = ({
 
   const renderAnswers = () => {
     return (question.answers && question.answers.length) ? question.answers.map(answer => (
-      <Answer key={answer.id} answer={answer} />
+      <Answer key={answer.id} answer={answer} userId={userId} onDelete={onDelete} />
     )) : <p>Empty answer!</p>;
   }
 
@@ -50,6 +71,7 @@ const mapStateToProps = state => ({
   question: state.question.question,
   loading: state.question.loading,
   hasErrors: state.question.hasErrors,
+  redirect: state.question.redirect,
   userId: state.auth.uid
 })
 
