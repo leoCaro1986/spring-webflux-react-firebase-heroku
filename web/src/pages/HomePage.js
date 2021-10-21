@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import LoginPage from './LoginPage.js'
 
 const HomePage = ({children}) => (
   <section>
@@ -11,6 +12,11 @@ const HomePage = ({children}) => (
     <Link to="/questions" className="button">
       View Questions
     </Link>
+   
+    
+
+
+   
   
   </section>
 )
