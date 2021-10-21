@@ -50,8 +50,8 @@ const SingleQuestionPage = ({
 
     return (
       <div>
-      <Question question={question} />{" "}
-      <QuestionReviewForm question={question}>
+        <Question question={question} />{" "}
+        <QuestionReviewForm question={question}/>
     </div>
    );
   }
