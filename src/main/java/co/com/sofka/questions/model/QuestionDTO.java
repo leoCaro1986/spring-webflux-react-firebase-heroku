@@ -18,27 +18,36 @@ public class QuestionDTO {
     @NotBlank
     private String category;
     private List<AnswerDTO> answers;
+    @NotBlank
+    private String userEmail;
+    private Integer numberOfReviews = 0;
+    private Integer sumOfReviewScores = 0;
+    private List<String> userReviews = new ArrayList<>();
 
 
     public QuestionDTO() {
 
     }
 
-    public QuestionDTO(String userId, String question, String type, String category) {
+    public QuestionDTO(String userId, String question, String type, String category, String userEmail) {
         this.userId = userId;
         this.question = question;
         this.type = type;
         this.category = category;
+        this.userEmail = userEmail;
     }
 
-    public QuestionDTO(String id, String userId, String question, String type, String category) {
+    public QuestionDTO(String id, String userId, String question, String type, String category, String userEmail, Integer numberOfReviews, Integer sumOfReviewScores, List<String> userReviews) {
         this.id = id;
         this.userId = userId;
         this.question = question;
         this.type = type;
         this.category = category;
+        this.userEmail= userEmail;
+        this.numberOfReviews= numberOfReviews;
+        this.sumOfReviewScores = sumOfReviewScores;
+        this.userReviews= userReviews;
     }
-
     public List<AnswerDTO> getAnswers() {
         this.answers = Optional.ofNullable(answers).orElse(new ArrayList<>());
         return answers;
@@ -88,6 +97,14 @@ public class QuestionDTO {
         this.category = category;
     }
 
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
     @Override
     public String toString() {
         return "QuestionDTO{" +
@@ -96,6 +113,11 @@ public class QuestionDTO {
                 ", question='" + question + '\'' +
                 ", type='" + type + '\'' +
                 ", category='" + category + '\'' +
+                ", answer='" + answers + '\'' +
+                ", email='" + userEmail + '\'' +
+                ", numberOfReviews=" + numberOfReviews +
+                ", sumOfReviewScores=" + sumOfReviewScores +
+                ", userReviews=" + userReviews +
                 '}';
     }
 
@@ -104,11 +126,37 @@ public class QuestionDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         QuestionDTO that = (QuestionDTO) o;
-        return Objects.equals(id, that.id);
+        return Objects.equals(id, that.id) && Objects.equals(userId, that.userId) && Objects.equals(question,that.question)&& Objects.equals(type,that.type)&&Objects.equals(category, that.category) && Objects.equals(answers, that.answers) && Objects.equals(userEmail, that.userEmail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+
+        return Objects.hash(id, userId, question, type, category, answers, userEmail);
+    }
+
+
+    public Integer getNumberOfReviews() {
+        return numberOfReviews;
+    }
+
+    public void setNumberOfReviews(Integer numberOfReviews) {
+        this.numberOfReviews = numberOfReviews;
+    }
+
+    public Integer getSumOfReviewScores() {
+        return sumOfReviewScores;
+    }
+
+    public void setSumOfReviewScores(Integer sumOfReviewScores) {
+        this.sumOfReviewScores = sumOfReviewScores;
+    }
+
+    public List<String> getUserReviews() {
+        return userReviews;
+    }
+
+    public void setUserReviews(List<String> userReviews) {
+        this.userReviews = userReviews;
     }
 }

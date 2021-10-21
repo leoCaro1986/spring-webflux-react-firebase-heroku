@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import firebase from "firebase/app";
 import { auth } from '../App'
 import "firebase/auth";
-import swal from 'sweetalert'
+import swal from 'sweetalert';
 
 
 
