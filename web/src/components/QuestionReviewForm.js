@@ -14,7 +14,7 @@ function QuestionReviewForm({ question, user, dispatch, loading, hasErrors }) {
 
   const renderQuestions = () => {
     console.log(question.userReviews);
-    return question.userReviews.includes(user);
+    return question.userReviews?.includes(user);
   };
   if (loading) return <p>Loading ...</p>;
   if (hasErrors) return <p>Unable to display questions.</p>;
@@ -22,9 +22,9 @@ function QuestionReviewForm({ question, user, dispatch, loading, hasErrors }) {
   return (
     <section>
       <h1>Questions</h1>
-      {renderQuestions() ? (
+      {renderQuestions() || user === null ? (
         <div>
-          Average question rating: <Rating question={question} />
+           <p style={{display: 'inline-block'}}> Average question rating: </p>  <Rating question={question} />
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
