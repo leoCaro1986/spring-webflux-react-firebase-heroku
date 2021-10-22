@@ -92,6 +92,11 @@ body {
     margin: 1rem 0;
   }
   
+  .categorySearch:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
   .button {
     display: inline-block;
     background: #ea3546;
