@@ -1,6 +1,6 @@
 package co.com.sofka.questions.routers;
 
-import co.com.sofka.questions.usecases.DeleteAnswerIdUseCase;
+import co.com.sofka.questions.usecases.DeleteAnswerUseCase;
 import co.com.sofka.questions.usecases.DeleteUseCase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +26,7 @@ public class EliminarQuestionRouter {
     }
 
     @Bean
-    public RouterFunction<ServerResponse> deleteAnswer(DeleteAnswerIdUseCase deleteAnswerIdUseCase) {
+    public RouterFunction<ServerResponse> deleteAnswer(DeleteAnswerUseCase deleteAnswerIdUseCase) {
         return route(
                 DELETE("/deleteAnswer/{id}").and(accept(MediaType.APPLICATION_JSON)),
                 request -> ServerResponse.accepted()

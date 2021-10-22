@@ -19,8 +19,8 @@ export default function LoginPage() {
         auth.signInWithEmailAndPassword(email, password)
         .then((res) => swal({
             icon: 'succes',
-            title: 'Ususarioregistrado',
-            text: 'Gracias por registrarse',
+            title: 'Wellcome',
+            text: 'Now enter',
         }))
     }
 
@@ -56,19 +56,22 @@ export default function LoginPage() {
 						name="password"
 						type="password"
 						onChange={(e)=>{setPassword(e.target.value)}}
-						/*value={this.state.password}*/></input>
+						></input>
 					</div>
             <div className="form-group">
               <button className="btn btn-dark px-5" onClick={registrarUser} value="register" type="submit">Sign in</button>
             </div>
             <br/>
-					<p>Click here to continue with Google</p>
+			<br/>
+					<p><h6>Click here to continue with Google</h6></p>
           	<button className="btn btn-dark px-5" onClick={signInWithGoogle}>
-            	Sign In With Google
+            		Sign In With Google
           	</button>
-			  <Link to="/register"><p>register</p>	</Link>
+			  <br/>
+			<br/>
+			  <Link to="/register"><p><h6>You do not have an account? </h6>register</p></Link>
 					<hr />
-				</form>
+			</form>
         </div>
     )
 }

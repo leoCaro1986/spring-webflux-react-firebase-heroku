@@ -37,7 +37,7 @@ export default function Register() {
 				className="mt-5 py-5 px-5"
 				autoComplete="off"
                 onSubmit={registrarUser}
-				/*onSubmit={this.handleSubmit}*/>
+				>
 					<p className="lead">Enter your email and password here.</p>
 					<div className="form-group">
 						<input
@@ -55,18 +55,14 @@ export default function Register() {
 						name="password"
 						type="password"
 						onChange={(e)=>{setPassword(e.target.value)}}
-						/*value={this.state.password}*/></input>
+						></input>
 					</div>
             <div className="form-group">
               <button className="btn btn-dark px-5" onClick={registrarUser} value="register" type="submit">Sign in</button>
             </div>
             <br/>
-					<p>Click here to continue with Google</p>
-          	<button className="btn btn-dark px-5" onClick={signInWithGoogle}>
-            	Sign In With Google
-          	</button>
-					<hr />
-				</form>
+					
+			</form>
         </div>
     )
 }

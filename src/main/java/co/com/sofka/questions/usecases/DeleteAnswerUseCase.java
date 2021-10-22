@@ -10,10 +10,10 @@ import java.util.Objects;
 
 @Service
 @Validated
-public class DeleteAnswerIdUseCase  implements Function<String, Mono<Void>> {
+public class DeleteAnswerUseCase implements Function<String, Mono<Void>> {
 
     private  final AnswerRepository answerRepository;
-    public DeleteAnswerIdUseCase(AnswerRepository answerRepository){
+    public DeleteAnswerUseCase(AnswerRepository answerRepository){
         this.answerRepository = answerRepository;
     }
 
