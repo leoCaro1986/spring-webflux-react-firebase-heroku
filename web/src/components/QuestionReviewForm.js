@@ -27,15 +27,15 @@ function QuestionReviewForm({ question, user, dispatch, loading, hasErrors }) {
            <p style={{display: 'inline-block'}}> Average question rating: </p>  <Rating question={question} />
         </div>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className="form-rating form-control border-4" onSubmit={handleSubmit(onSubmit)}>
           <label for="review">Question rating</label>
-          <select {...register("review")} id="">
+          <select className="form-rating" {...register("review")} id="">
             <option value=""> Select...</option>
             <option value="1">{`\u{1f641}`}</option>
             <option value="2"> {`\u{1f610}`}</option>
             <option value="3"> {`\u{1f600}`}</option>
           </select>
-          <button type="submit" className=" button right">
+          <button  type="submit" className="button ">
             Send review
           </button>
         </form>

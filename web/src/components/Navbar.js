@@ -16,6 +16,7 @@ export const PublicNavbar = () => (
 
 export const PrivateNavbar = () => (
   <nav>
+    <img src ="/icons8-question-64.png" alt="icon" style={{maxWidth:50, padding:0}} />
     <section>
       <link rel="icons8-questions"/>
       <Link to="/">Home</Link>

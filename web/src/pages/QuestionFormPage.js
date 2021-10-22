@@ -28,7 +28,7 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
         const data = {...formState,
             userId,
             question: content,
-            userEmail: userEmail
+            userEmail
         }
         console.log(data);
         validateInput(data) && dispatch(postQuestion(data));
