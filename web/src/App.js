@@ -17,9 +17,12 @@ import QuestionsPage from './pages/QuestionsPage'
 import QuestionFormPage from './pages/QuestionFormPage'
 import AnswerFormPage from './pages/AnswerFormPage'
 import OwnerQuestionsPage from './pages/OwnerQuestionsPage'
+import Register from './pages/RegisterPage'
 import { useAuthState } from "react-firebase-hooks/auth";
 import  Footer  from './components/Footer'
 import LoginPage from './pages/LoginPage.js'
+
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyCOTYcOr_9C3-C0QUpJ3YbiCN6zie3l1YM",
@@ -70,6 +73,11 @@ const App = ({ dispatch }) => {
                   </LoginPage>
               );
             }}/>
+            <Route exact path="/register"
+            component={
+             Register 
+            }
+            />
             <Redirect to="/" />
             
           </Switch>

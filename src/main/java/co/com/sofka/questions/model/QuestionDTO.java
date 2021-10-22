@@ -114,7 +114,7 @@ public class QuestionDTO {
                 ", type='" + type + '\'' +
                 ", category='" + category + '\'' +
                 ", answer='" + answers + '\'' +
-                ", email='" + userEmail + '\'' +
+                ", userEmail='" + userEmail + '\'' +
                 ", numberOfReviews=" + numberOfReviews +
                 ", sumOfReviewScores=" + sumOfReviewScores +
                 ", userReviews=" + userReviews +

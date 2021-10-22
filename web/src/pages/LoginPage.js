@@ -3,6 +3,7 @@ import firebase from "firebase/app";
 import { auth } from '../App'
 import "firebase/auth";
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
 
 
@@ -65,6 +66,7 @@ export default function LoginPage() {
           	<button className="btn btn-dark px-5" onClick={signInWithGoogle}>
             	Sign In With Google
           	</button>
+			  <Link to="/register"><p>register</p>	</Link>
 					<hr />
 				</form>
         </div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { postQuestion } from '../actions/questionActions'
 import { connect } from 'react-redux'
@@ -11,7 +10,7 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
         type:'OPEN (LONG OPEN BOX)',
         category:'TECHNOLOGY AND COMPUTER'
     })
-    const { register, handleSubmit } = useForm();
+    //const { register, handleSubmit } = useForm();
     const [content, setContent] = useState('');
     const history = useHistory();
 
@@ -28,7 +27,7 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
         const data = {...formState,
             userId,
             question: content,
-            userEmail
+            userEmail: userEmail
         }
         console.log(data);
         validateInput(data) && dispatch(postQuestion(data));
@@ -60,7 +59,7 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
                     </select>
                 </div>
                 <div>
-                    <label for="category">Category</label>
+                    <label htmlFor="category">Category</label>
                     <select name="category" id="category" onChange={handleInputChange}>
                         <option value="TECHNOLOGY AND COMPUTER">TECHNOLOGY AND COMPUTER</option>
                         <option value="SCIENCES">SCIENCES</option>
@@ -72,7 +71,7 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
                 </div>
 
                 <div>
-                    <label for="question">Question</label>
+                    <label htmlFor="question">Question</label>
                     <Input id="question" setContent={setContent} />
                     {/* <textarea id="question" {...register("question", { required: true, maxLength: 300 })} /> */}
                 </div>
