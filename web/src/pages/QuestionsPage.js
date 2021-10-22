@@ -18,7 +18,7 @@ const QuestionsPage = ({ dispatch, loading, questions, hasErrors }) => {
     const questionsFilteredSearch = questionFilteredCategory.filter(question => question.question.toUpperCase().includes(search.toUpperCase()))
 
     const goTOVariable = questionsFilteredSearch[0]?.id
-    //const questionDirected = questionsFilteredSearch[0]?.question
+   
     
 
 

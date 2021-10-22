@@ -24,14 +24,7 @@ import LoginPage from './pages/LoginPage.js'
 
 
 
-firebase.initializeApp({
-  apiKey: "AIzaSyCOTYcOr_9C3-C0QUpJ3YbiCN6zie3l1YM",
-  authDomain: "answer-and-question-dd046.firebaseapp.com",
-  projectId: "answer-and-question-dd046",
-  storageBucket: "answer-and-question-dd046.appspot.com",
-  messagingSenderId: "128699813117",
-  appId: "1:128699813117:web:57ba1abc86f8c72ba98294"
-});
+
 
 const auth = firebase.auth();
 

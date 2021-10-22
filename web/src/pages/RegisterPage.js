@@ -5,9 +5,7 @@ import "firebase/auth";
 import swal from 'sweetalert';
 
 
-
 export default function Register() {
-
 
 
     const [email,setEmail] = useState('');

@@ -9,11 +9,9 @@ function Rating({ question }) {
     case 1:
       return <div>{`\u{1f641}`}</div>;
       
-
     case 2:
       return <div>{`\u{1f610}`}</div>;
       
-
     case 3:
       return <div>{`\u{1f600}`}</div>;
       

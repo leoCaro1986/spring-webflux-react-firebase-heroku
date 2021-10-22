@@ -56,9 +56,8 @@ const FormPage = ({ dispatch, loading, redirect, match,hasErrors, question, user
 
             <form onSubmit={onSubmit}>
                 <div>
-                <label htmlFor="answer">Answer</label>
-                    <Input id="answer" setContent={setContent} />
-                    {/* <textarea id="answer" {...register("answer", { required: true, maxLength: 300 })} /> */}
+                    <label htmlFor="answer">Answer</label>
+                    <Input id="answer" setContent={setContent}/>
                 </div>
                 <button type="submit" className="button" disabled={loading} >{
                     loading ? "Saving ...." : "Save"

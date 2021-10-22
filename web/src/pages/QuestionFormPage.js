@@ -10,7 +10,7 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
         type:'OPEN (LONG OPEN BOX)',
         category:'TECHNOLOGY AND COMPUTER'
     })
-    //const { register, handleSubmit } = useForm();
+    
     const [content, setContent] = useState('');
     const history = useHistory();
 
@@ -73,7 +73,6 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
                 <div>
                     <label htmlFor="question">Question</label>
                     <Input id="question" setContent={setContent} />
-                    {/* <textarea id="question" {...register("question", { required: true, maxLength: 300 })} /> */}
                 </div>
                 <button type="submit" className="button" disabled={loading} >{
                     loading ? "Saving ...." : "Save"

@@ -31,21 +31,16 @@ const OwnerQuestionsPage = ({ dispatch, loading, questions, hasErrors, redirect,
                 });
             }
         });
-
-        
     }
-
-
     const renderQuestions = () => {
         if (loading) return <p>Loading questions...</p>
         if (hasErrors) return <p>Unable to display questions.</p>
-
         return questions.map(question => <Question
             key={question.id}
             question={question}
             excerpt onDelete={onDelete} />)
     }
-
+    
     return (
         <section>
             <h1>Questions</h1>

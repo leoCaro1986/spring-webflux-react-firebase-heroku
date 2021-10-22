@@ -13,11 +13,6 @@ const HomePage = ({children}) => (
       View Questions
     </Link>
    
-    
-
-
-   
-  
   </section>
 )
 export default HomePage
