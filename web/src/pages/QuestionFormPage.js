@@ -49,7 +49,7 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
         <section>
             <h1>New Question</h1>
             <form onSubmit={onSubmit}>
-                <div>
+                <div className="col-auto border-">
                     <label htmlFor="type">Type</label>
                     <select name="type" id="type" onChange={handleInputChange} >
                         <option value="OPEN (LONG OPEN BOX)">OPEN (LONG OPEN BOX)</option>
@@ -66,10 +66,8 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
                         <option value="SOFTWARE DEVELOPMENT">SOFTWARE DEVELOPMENT</option>
                         <option value="SOCIAL SCIENCES">SOCIAL SCIENCES</option>
                         <option value="LANGUAGE">LANGUAGE</option>
-
                     </select>
                 </div>
-
                 <div>
                     <label htmlFor="question">Question</label>
                     <Input id="question" setContent={setContent} />
@@ -77,6 +75,7 @@ const FormPage = ({ dispatch, loading, redirect, userId, userEmail }) => {
                 <button type="submit" className="button" disabled={loading} >{
                     loading ? "Saving ...." : "Save"
                 }</button>
+                
             </form>
         </section>
 

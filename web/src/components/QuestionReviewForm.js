@@ -21,23 +21,25 @@ function QuestionReviewForm({ question, user, dispatch, loading, hasErrors }) {
 
   return (
     <section>
-      <h1>Questions</h1>
+      
       {renderQuestions() || user === null ? (
         <div>
            <p style={{display: 'inline-block'}}> Average question rating: </p>  <Rating question={question} />
         </div>
       ) : (
-        <form className="form-rating form-control border-4" onSubmit={handleSubmit(onSubmit)}>
+        <form className="form-rating form-control border-" onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="review">Question rating</label>
-          <select className="form-rating" {...register("review")} id="">
-            <option value=""> Select...</option>
-            <option value="1">{`\u{1f641}`}</option>
-            <option value="2"> {`\u{1f610}`}</option>
-            <option value="3"> {`\u{1f600}`}</option>
-          </select>
-          <button  type="submit" className="button ">
-            Send review
-          </button>
+          <div className="row g-4 align-items-right">
+            <div className="col-auto">
+              <select className="form-rating" {...register("review")} id="">
+                <option value=""> Select...</option>
+                <option value="1">{`\u{1f641}`}</option>
+                <option value="2"> {`\u{1f610}`}</option>
+                <option value="3"> {`\u{1f600}`}</option>
+              </select>
+              <button  type="submit" className="button ">Rate question</button>
+            </div>
+          </div>
         </form>
       )}
     </section>

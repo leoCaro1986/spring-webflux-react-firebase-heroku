@@ -23,9 +23,6 @@ import  Footer  from './components/Footer'
 import LoginPage from './pages/LoginPage.js'
 
 
-
-
-
 const auth = firebase.auth();
 
 const App = ({ dispatch }) => {
@@ -107,7 +104,6 @@ function SignOut({ dispatch }) {
   );
 }
 
-
 export default App
 export {auth}
-/*export {signInWithGoogle}*/
+

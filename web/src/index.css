@@ -1,5 +1,6 @@
 body {
-    margin: 0;
+    margin: top;
+    background-color: rgb(223, 221, 221);
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -11,7 +12,7 @@ body {
   
   nav {
     display: flex;
-    padding: 2rem 0;
+    padding: 1rem 0;
     background: #111;
   }
   
@@ -34,7 +35,7 @@ body {
   }
   
   a {
-    color: #ea3546;
+    color: #e2dcdd;
     text-decoration: none;
   }
   
@@ -99,7 +100,7 @@ body {
   
   .button {
     display: inline-block;
-    background: #ea3546;
+    background: #c7a126;
     color: white;
     border-radius: 7px;
     font-weight: 600;
@@ -113,13 +114,13 @@ body {
 
   footer {
     background: #16222A;
-    background: -webkit-linear-gradient(59deg, #a82828, #e20606);
-    background: linear-gradient(59deg, #382020, #ec040f);
+    background: -webkit-linear-gradient(59deg, #524f4f, #0c0a0a);
+    background: linear-gradient(59deg, #3a3939, #131011);
     color: white;
     margin-top:50px;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 5px;
+    padding: 3px;
   }
   

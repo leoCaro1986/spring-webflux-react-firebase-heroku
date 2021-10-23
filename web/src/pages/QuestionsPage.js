@@ -39,8 +39,13 @@ const QuestionsPage = ({ dispatch, loading, questions, hasErrors }) => {
         <section className="page-section">
             <h1>Questions</h1>
             <form>
-                <input type="text" onChange={handleSearch}/>
-                <Link to={`/question/${goTOVariable}`} ><input style={{display: 'none'}} type="submit" value="search" /></Link>
+                <div className="row g-3 align-items-right">
+                    <div className="col-auto">
+                        <input className="form-control" placeholder="Search" type="text" onChange={handleSearch}/>
+                        <Link to={`/question/${goTOVariable}`} >
+                        <input className="form-control" style={{display: 'none'}} type="submit" value="search" /></Link>
+                    </div>
+                </div>
             </form>
             {renderQuestions()}
         </section>

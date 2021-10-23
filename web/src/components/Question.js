@@ -9,9 +9,10 @@ export const Question = ({ question, excerpt, onDelete, setCategorySearch }) => 
   }
 
   return <article className={excerpt ? 'question-excerpt' : 'question'}>
+    <h5>Question:</h5> 
   <h2><div dangerouslySetInnerHTML={{__html:question.question}} /></h2>
   {setCategorySearch?
-  <p className="categorySearch" onClick={handleCategorySearch}>{question.category}  - <small>{question.type}</small></p>:
+  <p className="categorySearch" onClick={handleCategorySearch}>Category: {question.category}<small></small></p>:
   <p>{question.category}  - <small>{question.type}</small></p>}
 
   {onDelete && (

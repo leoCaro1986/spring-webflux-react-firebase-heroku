@@ -51,12 +51,12 @@ export default function LoginPage({dispatch}) {
 
     return (
         <div>
-             <form
+            <form
 				className="mt-5 py-5 px-5"
 				autoComplete="off"
                 onSubmit={registrarUser}
-				>
-					<p className="lead">Enter your email and password here.</p>
+			>
+				<p className="lead">Enter your email and password here.</p>
 					<div className="form-group">
 						<input
 							className="form-control"
@@ -67,20 +67,20 @@ export default function LoginPage({dispatch}) {
 						></input>
 					</div>
 					<div className="form-group">
-					<input
-						className="form-control"
-						placeholder="Password"
-						name="password"
-						type="password"
-						onChange={(e)=>{setPassword(e.target.value)}}
+						<input
+							className="form-control"
+							placeholder="Password"
+							name="password"
+							type="password"
+							onChange={(e)=>{setPassword(e.target.value)}}
 						></input>
 					</div>
-            <div className="form-group">
-              <button className="btn btn-dark px-5" onClick={registrarUser} value="register" type="submit">Sign in</button>
-            </div>
-            <br/>
-			<br/>
-					<p><h6>Click here to continue with Google</h6></p>
+            	<div className="form-group">
+              		<button className="btn btn-dark px-5" onClick={registrarUser} value="register" type="submit">Sign in</button>
+            	</div>
+           		 <br/>
+				<br/>
+				<p><h6>Click here to continue with Google</h6></p>
           	<button className="btn btn-dark px-5" onClick={signInWithGoogle}>
             		Sign In With Google
           	</button>
